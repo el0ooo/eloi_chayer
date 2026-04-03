@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Projects</title>
+    <style>
+        :root{
+            --gap:16px;
+            --bg:#f7f8fb;
+            --card:#ffffff;
+            --accent:#0b66ff;
+            --radius:10px;
+        }
+        html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111;background:var(--bg)}
+        .container{
+            display:grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr; /* first column wider */
+            gap:var(--gap);
+            padding:24px;
+            min-height:100vh;
+            box-sizing:border-box;
+            align-items:start;
+        }
+
+        /* Profile (first column) */
+        .profile{
+            background:var(--card);
+            border-radius:var(--radius);
+            padding:18px;
+            box-shadow:0 6px 18px rgba(10,20,40,0.06);
+        }
+        .profile h1{margin:0 0 6px;font-size:1.6rem;color:var(--accent)}
+        .profile p{margin:0 0 12px;color:#444}
+        .profile ul{padding-left:1.1rem;margin:0;color:#333}
+        .profile a{color:var(--accent);text-decoration:none}
+
+        /* Project cards (columns 2..4) */
+        figure{
+            margin:0;
+            background:var(--card);
+            border-radius:var(--radius);
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
+            box-shadow:0 6px 18px rgba(10,20,40,0.06);
+            height:100%; /* make figures equal height */
+        }
+        figure img{
+            display:block;
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+        figure figcaption{
+            padding:12px;
+            font-size:0.95rem;
+            color:#222;
+        }
+
+        /* Responsive: stack columns on narrow screens */
+        @media (max-width:900px){
+            .container{grid-template-columns:1fr; padding:16px}
+            figure img{height:200px}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Column 1: name and information -->
+        <aside class="profile">
+            <h1>First Last</h1>
+            <p>Student • School Name</p>
+            <ul>
+                <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
+                <li>Course: Web Development / Class name</li>
+                <li>Skills: HTML, CSS, JavaScript</li>
+            </ul>
+            <p style="margin-top:12px;font-size:.9rem;color:#555">
+                Short bio or description. Replace this with your info.
+            </p>
+        </aside>
+
+        <!-- Columns 2-4: pictures (replace src with your images) -->
+        <figure>
+            <img src="https://via.placeholder.com/800x600?text=Project+1" alt="Project 1 screenshot">
+            <figcaption>Project 1 — short description</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://via.placeholder.com/800x600?text=Project+2" alt="Project 2 screenshot">
+            <figcaption>Project 2 — short description</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://via.placeholder.com/800x600?text=Project+3" alt="Project 3 screenshot">
+            <figcaption>Project 3 — short description</figcaption>
+        </figure>
+    </div>
+</body>
+</html>
