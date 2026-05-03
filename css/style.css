@@ -298,6 +298,71 @@ section.project{
   transform: translateY(0);
 }
 
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+  padding: 20px;
+}
+
+.video-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-modal video {
+  width: 100%;
+  max-height: 75vh;
+  background: #000;
+}
+
+.modal-text {
+  color: white;
+  text-align: left;
+}
+
+.modal-text h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.modal-text p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.close-modal {
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* --------------------- FORMAT TELEPHONE --------------------- */
+
  @media (max-width: 768px) {
       header {
         position: relative;
@@ -429,5 +494,30 @@ section.project{
       .socials a {
         font-size: 14px;
         margin-left: 0;
+      }
+
+      .video-modal {
+        align-items: flex-start;
+        padding-top: 90px;
+      }
+
+      .video-modal video {
+        max-height: 55vh;
+      }
+
+      .modal-text {
+        display: block;
+      }
+
+      .modal-text h3 {
+        font-size: 18px;
+      }
+
+      .modal-text p {
+        font-size: 14px;
+      }
+
+      .mobile-only {
+        display: block;
       }
   }
