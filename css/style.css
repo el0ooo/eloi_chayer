@@ -40,6 +40,62 @@
       font-size: 13px;
     }
 
+    /* LANGUAGE SELECTOR */
+
+.language-selector {
+  position: relative;
+   position: relative;
+  z-index: 999;
+}
+
+.language-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  color: #111;
+}
+
+/* DROPDOWN */
+.language-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+  padding: 10px 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition: 0.3s ease;
+
+  min-width: 70px;
+   z-index: 999;
+}
+
+/* ACTIVE */
+.language-dropdown.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.language-dropdown a {
+  text-decoration: none;
+  color: #111;
+  font-size: 13px;
+}
+
     /* BURGER */
     .burger {
       display: none;
@@ -400,6 +456,34 @@ section.project{
         font-size: 22px;
         margin: 0;
       }
+
+        .language-selector {
+          margin-top: 10px;
+          position: relative;
+          z-index: 999;
+        }
+
+        .language-btn {
+          font-size: 20px;
+        }
+
+        .language-dropdown {
+          position: relative;
+          top: 10px;
+
+          background: transparent;
+          backdrop-filter: none;
+
+          padding: 0;
+          gap: 15px;
+
+          align-items: center;
+           z-index: 999;
+        }
+
+        .language-dropdown a {
+          font-size: 18px;
+        }
 
       .burger {
         display: flex;

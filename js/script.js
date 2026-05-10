@@ -3,13 +3,18 @@ const dateElement = document.getElementById("date");
 
 const today = new Date();
 
+const isEnglishPage = window.location.pathname.includes("en");
+
+const locale = isEnglishPage ? "en-US" : "fr-FR";
+
+
 const options = {
   day: "2-digit",
   month: "long",
   year: "numeric"
 };
 
-const formattedDate = today.toLocaleDateString("fr-FR", options);
+const formattedDate = today.toLocaleDateString(locale, options);
 
 dateElement.textContent = formattedDate;
 
@@ -81,3 +86,27 @@ if (closeModal && modal && modalVideo) {
     }
   });
 }
+
+// ----------------Sélecteur de langue----------------
+const languageBtn = document.getElementById("languageBtn");
+const languageDropdown = document.getElementById("languageDropdown");
+
+const languageLinks = languageDropdown.querySelectorAll("a");
+
+/* ouvre / ferme */
+languageBtn.addEventListener("click", () => {
+  languageDropdown.classList.toggle("active");
+});
+
+/* change texte AVANT navigation */
+languageLinks.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    const selectedLanguage = link.textContent;
+
+    languageBtn.textContent = `${selectedLanguage} ▼`;
+
+  });
+
+});
